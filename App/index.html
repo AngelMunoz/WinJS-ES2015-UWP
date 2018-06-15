@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Link7Admin</title>
+  <link id="WinJSStyleTag" href="lib/winjs-4.0.1/css/ui-dark.css" rel="stylesheet" />
+  <link href="css/default.css" rel="stylesheet" />
+  <script src="lib/winjs-4.0.1/js/base.js"></script>
+  <script src="lib/winjs-4.0.1/js/ui.js"></script>
+  <script src="lib/navigator.js"></script>
+  <script src="lib/eventemitter3.min.js"></script>
+  <script type="module" defer src="js/main.js">
+  </script>
+</head>
+<body class="win-type-body">
+  <div class="splitView" data-win-control="WinJS.UI.SplitView" data-win-options="{panePlacement: 'right'}">
+    <!-- Pane area -->
+    <div>
+      <div class="header">
+        <button data-win-control="WinJS.UI.SplitViewPaneToggle"
+                data-win-options="{ splitView: select('.splitView') }"></button>
+      </div>
+      <nav class="splitview-commands">
+        <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Home', icon: 'home'}"></div>
+        <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'About', icon: 'favorite'}"></div>
+        <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Settings', icon: 'settings'}"></div>
+      </nav>
+    </div>
+
+    <!-- Content area -->
+    <div class="contenttext">
+      <div id="contenthost"
+           data-win-control="Application.PageControlNavigator"
+           data-win-options="{ home: '/pages/home/home.html' }"></div>
+    </div>
+  </div>
+</body>
+</html>

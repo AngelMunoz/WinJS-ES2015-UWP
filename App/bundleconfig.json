@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "js/loader.min.js",
+    "inputFiles": [
+      "js/loader.js"
+    ]
+  },
+  {
+    "outputFileName": "pages/home/home.min.js",
+    "inputFiles": [
+      "pages/home/home.js"
+    ]
+  }
+]
