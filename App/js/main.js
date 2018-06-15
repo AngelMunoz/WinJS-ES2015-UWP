@@ -1,10 +1,13 @@
 ﻿import RouteManager from "/js/route-manager.js"
 import ApplicationManager from "/js/application-manager.js"
+// import your route definitions
 import Home from "/pages/home/home.js"
 import About from "/pages/about/about.js"
 
+// I'll just pick these, I don't like to type all the namespaces all the time sorry
 const { UI, Navigation } = WinJS;
 const { Pages } = UI;
+
 const routes = [Home, About];
 
 /**
@@ -30,12 +33,12 @@ function definePages(routes) {
 
 const application = new ApplicationManager();
 // register to firsr-activation event
-application.emitter.on('first-activation', function (args) {
-  console.log('please work')
-  definePages(routes);
-  args.setPromise(UI.processAll().then(() => loader.addRouteListeners())
-    .then(() => Navigation.navigate(Home.uri, Home)));
-});
+application.emitter
+  .on('first-activation', function (args) {
+    definePages(routes);
+    args.setPromise(UI.processAll().then(() => loader.addRouteListeners())
+      .then(() => Navigation.navigate(Home.uri, Home)));
+  });
 
 application.start();
 export default application;
